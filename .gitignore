@@ -1,0 +1,6 @@
+build-linux/
+**/autoexec_server.log
+*.log
+*.db
+*.sqlite
+.deploy/

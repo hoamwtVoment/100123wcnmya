@@ -1,0 +1,13 @@
+# Linux DDNet build
+
+本仓库由拆分包补齐 DDNet 15.4 的构建目录后组成。GitHub Actions 使用 Ubuntu 22.04 编译，避免产物依赖过新的 glibc。
+
+- Actions 页面运行 `Build Linux DDNet server`
+- 完成后在 Artifacts 下载 `ddnet-server-linux-x86_64`
+- 将其中的 `DDNet-Server` 放入服务器的 `deploy/`，并保留配置与数据目录
+
+本地 Linux/WSL（需已安装 cmake、ninja、c++、python3）：
+
+```bash
+BUILD_SERVER_SKIP_APT=1 ./build_server.sh
+```
