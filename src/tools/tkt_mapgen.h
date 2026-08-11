@@ -779,7 +779,8 @@ static void WriteTKTMapLayers(IStorage *pStorage, const char *pPath, const STKTM
 	Image.m_Width = 1024;
 	Image.m_Height = 1024;
 	Image.m_External = 1;
-	Image.m_ImageName = Writer.AddData(str_length("ddnet_walls") + 1, "ddnet_walls");
+	char aImageName[] = "ddnet_walls";
+	Image.m_ImageName = Writer.AddData(sizeof(aImageName), aImageName);
 	Image.m_ImageData = -1;
 	Writer.AddItem(MAPITEMTYPE_IMAGE, 0, sizeof(Image), &Image);
 
